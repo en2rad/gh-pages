@@ -16,11 +16,11 @@ function BottomNav() {
 
     return (
         <BottomNavigation className="с-bottom-nav">
-            <Link className="с-bottom-nav__link" onClick={() => setPage(true)} to="/">
+            <Link className="с-bottom-nav__link" onClick={() => setPage(true)} to="/gh-pages">
                 <BottomNavigationAction className="с-bottom-nav__btn" to="/"  label="Плеер" value="recents" icon={<HomeIcon className="с-bottom-nav__icon icon"/>} />
             </Link>
             <Link className="с-bottom-nav__link" onClick={() => setPage(false)} to="/gh-pages/list-music">
-                <BottomNavigationAction className="с-bottom-nav__btn" to="/gh-pages/list-music" label="Музыка" value="favorites" icon={<QueueMusicIcon className="с-bottom-nav__icon icon"/>} />
+                <BottomNavigationAction className="с-bottom-nav__btn" to="/list-music" label="Музыка" value="favorites" icon={<QueueMusicIcon className="с-bottom-nav__icon icon"/>} />
             </Link>
             <Link className="с-bottom-nav__link" onClick={() => setPage(false)} to="/gh-pages/play-list">  
                 <BottomNavigationAction className="с-bottom-nav__btn" to="/play-list" label="Плейлисты" value="playlist" icon={<FolderOpenIcon className="с-bottom-nav__icon icon"/>} />
