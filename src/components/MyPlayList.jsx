@@ -24,7 +24,7 @@ function MyPlayList() {
             { 
 				playListArr.map((item, index) => {
 					return (	
-						<Link to="/list-music">
+						<Link to="/gh-pages/list-music">
 							<ListItem className="c-play-list__item" onClick={() => PickPlayList(item.tracks)}  button key={index}>
 								<Avatar className="c-play-list__img" variant="square" src={item.img_src} alt="img"/>
 							
