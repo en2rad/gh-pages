@@ -72,6 +72,4 @@ let All_song = [
 ];
 
 
-
-
 export default All_song
