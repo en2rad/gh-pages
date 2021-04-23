@@ -1,6 +1,6 @@
 import './App.css';
-import React, {useContext } from 'react'
-import { Context} from './components/Context'
+import React, { useEffect } from 'react'
+
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -8,37 +8,92 @@ import {
 } from "react-router-dom";
 
 // compnent
-import Player from './components/Player'
-import BottomNav from './components/BottomNav'
+import PlayLists from './components/PlayLists'
 import ListMusic from './components/ListMusic'
-import MyPlayList from './components/MyPlayList'
+import BottomNav from './components/BottomNav'
+import Player from './components/Player/Player'
+import SwipeableBottomMenu from './components/SwipeableBottomMenu'
+import MiniPlayer from './components/Player/MiniPlayer'
 
-function App() {
-	const { songs } = useContext(Context);
+
+import { 
+	handlePickPlayList,
+	handlePrevTrackIndex,
+	handleNextTrackIndex,
+} from './redux/action'
+
+import { connect } from 'react-redux';
+
+
+function App({playerState, playList, handlePickPlayList, handlePrevTrackIndex, handleNextTrackIndex,}) {
+	useEffect(() => {
+        handlePickPlayList(playList.allSongs)
+    },[])
+
+    const {   
+		currentPlayList,
+		currentSongIndex,
+		prevSongIndex,
+		nextSongIndex,
+    } = playerState;
+
+	useEffect(() => {
+		currentSongIndex + 1 > currentPlayList.length - 1 && handleNextTrackIndex(currentSongIndex + 1);
+		currentSongIndex - 1 > 0 && handlePrevTrackIndex(currentSongIndex - 1);
+	}, [currentSongIndex]);
+
+
 
 	return (
+		<>
 		<div class="background">
 			<div class="iphone">
 				<div class="screen">
 					<Router>
 						<div className="wrapper">
-							<Player />
+					
+							<Player /> 
 							<Switch>
-								<Route exact path="/gh-pages"></Route>
+								<Route exact path="/gh-pages/">
+									<SwipeableBottomMenu/>
+								</Route>
 								<Route path="/gh-pages/list-music">
-									<ListMusic playList={songs} />
+									<ListMusic/>
 								</Route>
 								<Route path="/gh-pages/play-list">
-									<MyPlayList  />
+									<PlayLists />
 								</Route>
-							</Switch>								
+							</Switch>					
 						</div>
+						
 						<BottomNav/>
 					</Router>
 				</div>
 			</div>
 		</div>
+		{/* <div className="asd">
+		
+			
+			<MiniPlayer/>
+		</div> */}
+		</>
   	);
 }
 
-export default App;
+const mapStateToProps = (store) => {
+    const { playerState } = store;
+	const { playList } = store;
+    return {
+        playerState: playerState,
+		playList: playList,
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    { 
+		handlePickPlayList,
+		handlePrevTrackIndex,
+		handleNextTrackIndex,
+    }
+)(App);
