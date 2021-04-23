@@ -1,0 +1,283 @@
+* { 
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #fff;
+    --secondry-color: #ffffffad;
+
+    --primary-bg: #3a3a3a;
+    --secondry-bg: #2b2828;
+}
+
+
+html, body {
+    min-width: 435px;
+    min-height: 1000px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+div.background {
+    position: absolute;
+    top: 0px; left: 0px;
+    min-width: 435px;
+    min-height: 1000px;
+    height: 100%; width: 100%;
+    background: #408dce url('https://hoidrop.s3-us-west-2.amazonaws.com/cp_social_app_background.jpg') no-repeat center center; 
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+}
+
+/*	The Device */
+
+div.iphone {
+    height: 810px; width: 435px; 
+    position: absolute;
+    margin: auto;
+    top: 0px; bottom: 80px; left: 0px; right: 0px;
+    background: url('https://hoidrop.s3-us-west-2.amazonaws.com/cp_social_app_iphone.png') no-repeat center center; 
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+}
+
+div.screen {
+    height: 568px; 
+    width: 320px;
+    position: absolute;
+    top: 119px; left: 59px;
+    overflow: hidden;
+    position: relative;
+}
+
+.wrapper {
+	height: 523px;
+}
+
+
+
+.c-player {
+    width: 320px;
+    padding: 10px 13px;
+    background: var(--primary-bg);
+    color: #fff;
+    height: 100%;
+}
+
+
+
+
+/* START START = PLAYER INFO = START START START START START */
+.screen .c-player-info {
+    display: flex;
+	flex-direction: column;
+	box-shadow: none;
+	background: none;
+	border-radius: 0;
+}
+
+.c-player-info .c-player-info__img {
+    width: 100%;
+    height: auto;   
+}
+
+.c-player-info .c-player-info__body {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 10px 0;
+}
+
+.c-player-info .c-player-info__text {
+    padding: 0;
+}
+
+.c-player-info .c-player-info__title {
+
+}
+
+.c-player-info .c-player-info__artist {
+
+}
+
+.c-player-info .c-player-info__btn {
+    color: var(--primary-color);
+}
+
+.c-player-info .c-player-info__icon {
+
+}
+/* ENDS ENDS = PLAYER INFO = ENDS ENDS ENDS ENDS ENDS */
+
+
+/* START START = LISTMUSIC = START START START START START */
+
+.c-list-music {
+    overflow-y: scroll;
+    max-height: 512px;
+    width: 337px;
+}
+
+.c-list-music  .c-list-music__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.c-list-music .c-list-music__disc {
+    color: var(--secondry-color);
+    font-size: 10px;
+}
+
+.c-list-music .c-list-music__title {
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+
+.c-list-music .c-list-music__item {
+    font-size: inherit;
+    padding: 0px 0 0 13px;
+}
+
+.c-list-music .c-list-music__img {
+    margin-right: 10px;
+}
+
+.c-list-music .c-list-music__text {
+    color: var(--primary-color);
+    font-size: 15px;
+}
+
+.c-list-music .c-list-music__text span {
+    font-size: inherit;
+}
+
+.c-list-music .c-list-music__text p {
+    color: var(--secondry-color);
+    font-size: 13px;
+}
+
+.c-list-music .c-list-music__btn{
+    color: var(--secondry-color);
+} 
+
+.c-list-music .c-list-music__icon {
+    font-size: inherit;
+}
+
+/* END END END END END = LISTMUSIC =  END END END END END */
+
+
+
+
+/* START START = LISTMUSIC = START START START START START */
+
+.c-play-list {
+    overflow-y: scroll;
+    max-height: 512px;
+    width: 337px;
+}
+
+.c-play-list .c-play-list__header {
+    padding: 10px 13px;
+    background: var(--secondry-bg);
+}
+
+.c-play-list .c-play-list__title {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+
+.c-play-list .c-play-list__item {
+    padding: 10px 0 10px 13px;
+}
+
+.c-play-list .c-play-list__img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.c-play-list .c-play-list__text {
+    color: var(--primary-color);
+    font-size: 15px;
+}
+
+.c-play-list .c-play-list__text p {
+    color: var(--secondry-color);
+}
+
+.c-play-list .c-play-list__btn {
+    color: var(--secondry-color);
+}
+
+.c-play-list .c-play-list__icon {
+
+}
+/* END END END END END = LISTMUSIC =  END END END END END */          
+
+
+
+
+/* START START = BOTTOM NAV = START START START START START */     
+.screen .с-bottom-nav {
+    height: 38px;
+    background: #3a3a3a;
+    border-top: 1px solid;
+    border-color: var(--secondry-color);
+    padding: 3px 0;
+}
+
+.с-bottom-nav .с-bottom-nav__link {
+
+}
+
+.с-bottom-nav .с-bottom-nav__link:active {
+    color: var(--primary-color)!important;
+}
+
+.с-bottom-nav .с-bottom-nav__btn {
+
+    padding: 0!important;
+}
+
+.с-bottom-nav .с-bottom-nav__btn span {
+    opacity: 1;
+    color: var(--secondry-color);
+    font-size: 10px;
+}
+
+.с-bottom-nav .с-bottom-nav__icon {
+    font-size: 25px;
+    color: var(--secondry-color);
+}
+/* END END END END END = BOTTOM NAV =  END END END END END */        
+
+
+
+.btn-more {
+    font-size: inherit;
+}
+
+.icon {
+    font-size: inherit;
+}
+
+
+.volume-wrap {
+    display: flex;
+}
