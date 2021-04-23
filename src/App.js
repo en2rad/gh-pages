@@ -24,11 +24,11 @@ function App() {
 						<div className="wrapper">
 							<Player />
 							<Switch>
-								<Route exact path="/"></Route>
-								<Route path="/list-music">
+								<Route exact path="/gh-pages"></Route>
+								<Route path="/gh-pages/list-music">
 									<ListMusic playList={songs} />
 								</Route>
-								<Route path="/play-list">
+								<Route path="/gh-pages/play-list">
 									<MyPlayList  />
 								</Route>
 							</Switch>								
